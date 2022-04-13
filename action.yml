@@ -1,0 +1,17 @@
+name: '"Configure AWS Credentials using Cognito Identity Pools" Action For GitHub Actions'
+description: 'Configure AWS credential and region environment variables for use with the AWS CLI and AWS SDKs using Cognito Identity Pools'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  aws-region:
+    description: 'AWS Region, e.g. us-east-2'
+    required: true
+outputs:
+  aws-account-id:
+    description: 'The AWS account ID for the provided credentials'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+  post: 'dist/cleanup/index.js'
+ 
